@@ -17,8 +17,8 @@ public class Operator {
                 .forEach(index -> operator.add(operationSource.get(index).charAt(0)));
     }
 
-    private boolean isOddNumber(int index) {
-        return index % 2 == 1;
+    private boolean isOddNumber(int number) {
+        return number % 2 == 1;
     }
 
     private boolean checkSource(String source) {

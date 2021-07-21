@@ -17,8 +17,8 @@ public class Operand {
                 .forEach(index -> operand.add(Integer.parseInt(operationSource.get(index))));
     }
 
-    private boolean isEvenNumber(int index) {
-        return index % 2 == 0;
+    private boolean isEvenNumber(int number) {
+        return number % 2 == 0;
     }
 
     private boolean checkSource(String source) {

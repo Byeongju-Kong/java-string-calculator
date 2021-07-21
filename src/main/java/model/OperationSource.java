@@ -19,8 +19,8 @@ public class OperationSource {
         operator = new Operator(operationSource);
     }
 
-    private boolean isEvenNumber(int index) {
-        return index % 2 == 0;
+    private boolean isEvenNumber(int number) {
+        return number % 2 == 0;
     }
 
     private boolean isInvalidSize(int size) {
