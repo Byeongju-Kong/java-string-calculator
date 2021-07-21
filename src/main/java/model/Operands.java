@@ -6,11 +6,11 @@ import java.util.stream.IntStream;
 
 import static model.OperationSource.START_ENTRY;
 
-public class Operand {
+public class Operands {
     private List<Integer> operand;
     private static final String OPERAND_REGEX = "^[0-9]*$";
 
-    public Operand(List<String> operationSource) {
+    public Operands(List<String> operationSource) {
         operand = new ArrayList<>();
         IntStream.range(START_ENTRY, operationSource.size())
                 .filter(this::isEvenNumber)

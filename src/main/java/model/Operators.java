@@ -6,11 +6,11 @@ import java.util.stream.IntStream;
 
 import static model.OperationSource.START_ENTRY;
 
-public class Operator {
+public class Operators {
     private List<Character> operator;
     private static final String OPERATOR_REGEX = "+-*/";
 
-    public Operator(List<String> operationSource) {
+    public Operators(List<String> operationSource) {
         operator = new ArrayList<>();
         IntStream.range(START_ENTRY, operationSource.size())
                 .filter(this::isOddNumber)

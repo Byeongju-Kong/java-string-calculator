@@ -5,8 +5,8 @@ import java.util.List;
 public class OperationSource {
     static final int START_ENTRY = 0;
     private static final int MIN_OPERATION_SOURCE_SIZE = 3;
-    private final Operand operand;
-    private final Operator operator;
+    private final Operands operands;
+    private final Operators operators;
     private int timesOfOperation;
 
     public OperationSource(List<String> operationSource) {
@@ -15,8 +15,8 @@ public class OperationSource {
         if (isInvalidSize(operationSource.size())) {
             throw new IllegalStateException("연산식이 완벽하지 않습니다.");
         }
-        operand = new Operand(operationSource);
-        operator = new Operator(operationSource);
+        operands = new Operands(operationSource);
+        operators = new Operators(operationSource);
     }
 
     private boolean isEvenNumber(int number) {
@@ -32,12 +32,12 @@ public class OperationSource {
     }
 
     public int getOperand() {
-        return operand.getSource();
+        return operands.getSource();
     }
 
     public char getOperator() {
         timesOfOperation--;
-        return operator.getSource();
+        return operators.getSource();
     }
 
 }
