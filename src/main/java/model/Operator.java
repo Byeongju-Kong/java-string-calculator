@@ -2,13 +2,23 @@ package model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.IntStream;
+
+import static model.OperationSource.START_ENTRY;
 
 public class Operator {
     private List<Character> operator;
     private static final String OPERATOR_REGEX = "+-*/";
 
-    public Operator() {
+    public Operator(List<String> operationSource) {
         operator = new ArrayList<>();
+        IntStream.range(START_ENTRY, operationSource.size())
+                .filter(this::isOddNumber)
+                .forEach(index -> operator.add(operationSource.get(index).charAt(0)));
+    }
+
+    private boolean isOddNumber(int index) {
+        return index % 2 == 1;
     }
 
     private boolean checkSource(String source) {
@@ -16,12 +26,6 @@ public class Operator {
             throw new IllegalStateException("연산 기호의 자리에 잘못된 입력이 있습니다.");
         }
         return true;
-    }
-
-    public void add(String source) {
-        if (checkSource(source)) {
-            operator.add(source.charAt(0));
-        }
     }
 
     public char getSource() {
