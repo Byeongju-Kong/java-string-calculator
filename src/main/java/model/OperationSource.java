@@ -23,27 +23,27 @@ public class OperationSource {
         setOperator(operationSource);
     }
 
-    private boolean isEven(int index) {
+    private boolean isEvenNumber(int index) {
         return index % 2 == 0;
     }
 
-    private boolean isOdd(int index) {
+    private boolean isOddNumber(int index) {
         return index % 2 == 1;
     }
 
     private boolean isInvalidSize(int size) {
-        return isEven(size) || size < MIN_OPERATION_SOURCE_SIZE;
+        return isEvenNumber(size) || size < MIN_OPERATION_SOURCE_SIZE;
     }
 
     private void setOperand(List<String> operationSource) {
         IntStream.range(START_ENTRY, operationSource.size())
-                .filter(this::isEven)
+                .filter(this::isEvenNumber)
                 .forEach(n -> operand.add(operationSource.get(n)));
     }
 
     private void setOperator(List<String> operationSource) {
         IntStream.range(START_ENTRY, operationSource.size())
-                .filter(this::isOdd)
+                .filter(this::isOddNumber)
                 .forEach(n -> operator.add(operationSource.get(n)));
     }
 
