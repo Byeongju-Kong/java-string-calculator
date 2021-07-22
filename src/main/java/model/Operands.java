@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.IntStream;
 
-import static model.Operation.START_ENTRY;
+import static model.OperationSource.START_ENTRY;
 
 public class Operands {
     private List<Operand> operands;

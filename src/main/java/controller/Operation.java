@@ -1,24 +1,25 @@
 package controller;
 
 import model.Calculator;
+import model.OperationSource;
 import view.Input;
 
 public class Operation implements Calculator {
 
-    private model.Operation operation;
+    private OperationSource operationSource;
     private double result;
 
     public void input() {
-        operation = new model.Operation(Expression.getExpression(Input.input()));
+        operationSource = new OperationSource(Expression.getExpression(Input.input()));
         result = 0.0;
     }
 
     public void calculate() {
-        result = operation.getOperand();
+        result = operationSource.getOperand();
 
-        while (operation.hasNextOperation()) {
-            int operand = operation.getOperand();
-            char operator = operation.getOperator();
+        while (operationSource.hasNextOperation()) {
+            int operand = operationSource.getOperand();
+            char operator = operationSource.getOperator();
 
             if (operator == '+') {//TODO ENUM으로 관리하도록 변경
                 result = Addition.operate(result, operand);
