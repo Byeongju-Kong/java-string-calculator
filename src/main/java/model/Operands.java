@@ -8,7 +8,6 @@ import static model.OperationSource.START_ENTRY;
 
 public class Operands {
     private List<Operand> operands;
-    private static final String OPERAND_REGEX = "^[0-9]*$";
 
     public Operands(List<String> operationSource) {
         operands = new ArrayList<>();

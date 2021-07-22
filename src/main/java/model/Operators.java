@@ -8,7 +8,6 @@ import static model.OperationSource.START_ENTRY;
 
 public class Operators {
     private List<Operator> operators;
-    private static final String OPERATOR_REGEX = "+-*/";
 
     public Operators(List<String> operationSource) {
         operators = new ArrayList<>();
