@@ -11,20 +11,8 @@ public class OperationSource {
 
     public OperationSource(List<String> operationSource) {
         timesOfOperation = operationSource.size() / 2;
-
-        if (isInvalidSize(operationSource.size())) {
-            throw new IllegalStateException("연산식이 완벽하지 않습니다.");
-        }
         operands = new Operands(operationSource);
         operators = new Operators(operationSource);
-    }
-
-    private boolean isEvenNumber(int number) {
-        return number % 2 == 0;
-    }
-
-    private boolean isInvalidSize(int size) {
-        return isEvenNumber(size) || size < MIN_OPERATION_SOURCE_SIZE;
     }
 
     public boolean hasNextOperation() {
