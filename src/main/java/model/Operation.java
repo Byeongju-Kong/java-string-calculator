@@ -2,14 +2,14 @@ package model;
 
 import java.util.List;
 
-public class OperationSource {
+public class Operation {
     static final int START_ENTRY = 0;
     private static final int MIN_OPERATION_SOURCE_SIZE = 3;
     private final Operands operands;
     private final Operators operators;
     private int timesOfOperation;
 
-    public OperationSource(List<String> operationSource) {
+    public Operation(List<String> operationSource) {
         timesOfOperation = operationSource.size() / 2;
 
         if (isInvalidSize(operationSource.size())) {

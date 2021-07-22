@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.IntStream;
 
-import static model.OperationSource.START_ENTRY;
+import static model.Operation.START_ENTRY;
 
 public class Operands {
     private List<Operand> operands;
@@ -19,7 +19,6 @@ public class Operands {
     private boolean isEvenNumber(int number) {
         return number % 2 == 0;
     }
-
 
     public int getSource() {
         if (operands.size() == 0) {
