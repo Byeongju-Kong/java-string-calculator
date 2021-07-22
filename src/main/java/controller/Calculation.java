@@ -13,7 +13,7 @@ public class Calculation implements Calculator {
     private double result;
 
     public void input() {
-        operationSource = new OperationSource(Expression.getExpression(Main.Input.input()));
+        operationSource = new OperationSource(Expression.getExpression(Input.input()));
         result = 0.0;
     }
 
