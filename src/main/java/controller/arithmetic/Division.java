@@ -1,4 +1,4 @@
-package controller;
+package controller.arithmetic;
 
 public class Division {
 

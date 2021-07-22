@@ -1,4 +1,4 @@
-package controller;
+package controller.arithmetic;
 
 public class Subtraction {
     public static double operate(double a, int b) {

@@ -1,5 +1,9 @@
 package controller;
 
+import controller.arithmetic.Addition;
+import controller.arithmetic.Division;
+import controller.arithmetic.Multiplication;
+import controller.arithmetic.Subtraction;
 import model.Calculator;
 import model.OperationSource;
 import view.Input;
