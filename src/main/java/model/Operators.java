@@ -20,10 +20,21 @@ public class Operators {
         return number % 2 == 1;
     }
 
-    public char getSource() {
-        if (operators.size() == 0) {
-            throw new IndexOutOfBoundsException("반환할 연산기호가 없습니다.");
+    public double operate(double result, double operand) {
+        char operator = operators.remove(0).getOperator();
+        if(operator == '/' && operand == '0'){
+            throw new ArithmeticException("0으로 나눌 수 없습니다");
         }
-        return operators.remove(0).getOperator();
+
+        if(operator == '+'){
+            return result + operand;
+        }
+        else if(operator == '-'){
+            return result - operand;
+        }
+        else if(operator == '*'){
+            return result * operand;
+        }
+        return result / operand;
     }
 }
