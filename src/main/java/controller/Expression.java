@@ -12,14 +12,14 @@ public class Expression {
         input = input.replaceAll("\\s+", DELIMITER);
         List<String> expression = new ArrayList<>(Arrays.asList(input.split((DELIMITER))));
 
-        if (!isValidExpression(expression)) {
+        if (isInvalidExpression(expression)) {
             throw new IllegalStateException("계산을 위한 식이 완전하지 않습니다.");
         }
         return expression;
     }
 
-    private static boolean isValidExpression(List<String> expression) {
-        return expression.size() >= MIN_SIZE && !isEven(expression.size());
+    private static boolean isInvalidExpression(List<String> expression) {
+        return expression.size() < 3 || isEven(expression.size());
     }
 
     private static boolean isEven(int size) {
