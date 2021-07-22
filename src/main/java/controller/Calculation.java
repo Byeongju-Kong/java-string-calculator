@@ -6,7 +6,6 @@ import controller.arithmetic.Multiplication;
 import controller.arithmetic.Subtraction;
 import model.Calculator;
 import model.OperationSource;
-import view.Input;
 
 public class Calculation implements Calculator {
 
@@ -14,7 +13,7 @@ public class Calculation implements Calculator {
     private double result;
 
     public void input() {
-        operationSource = new OperationSource(Expression.getExpression(Input.input()));
+        operationSource = new OperationSource(Expression.getExpression(Main.Input.input()));
         result = 0.0;
     }
 

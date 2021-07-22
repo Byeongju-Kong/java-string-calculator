@@ -12,7 +12,7 @@ public class Expression {
         input = input.replaceAll("\\s+", DELIMITER);
         List<String> expression = new ArrayList<>(Arrays.asList(input.split((DELIMITER))));
 
-        if(!isValidExpression(expression)){
+        if (!isValidExpression(expression)) {
             throw new IllegalStateException("계산을 위한 식이 완전하지 않습니다.");
         }
         return expression;
