@@ -19,7 +19,7 @@ public class Expression {
     }
 
     private static boolean isInvalidExpression(List<String> expression) {
-        return expression.size() < 3 || isEven(expression.size());
+        return expression.size() < MIN_SIZE || isEven(expression.size());
     }
 
     private static boolean isEven(int size) {
