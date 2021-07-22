@@ -4,7 +4,7 @@ import model.Calculator;
 import model.OperationSource;
 import view.Input;
 
-public class Operation implements Calculator {
+public class Calculation implements Calculator {
 
     private OperationSource operationSource;
     private double result;
