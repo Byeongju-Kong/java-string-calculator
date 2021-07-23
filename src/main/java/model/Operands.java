@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.IntStream;
 
-import static model.Operation.START_ENTRY;
 
 public class Operands {
     private List<Operand> operands;
+    private static final int START_ENTRY = 0;
 
     public Operands(List<String> operationSource) {
         operands = new ArrayList<>();

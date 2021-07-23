@@ -6,30 +6,30 @@ import controller.Input;
 import java.util.List;
 
 public class Operation implements Calculator {
-    static final int START_ENTRY = 0;
-    private final Operands operands;
-    private final Operators operators;
+    private Operands operands;
+    private Operators operators;
     private int timesOfOperation;
+    private List<String> operationSource;
     private double result;
 
 
     public Operation() {
-        List<String> operationSource = input();
-        timesOfOperation = operationSource.size() / 2;
-        operands = new Operands(operationSource);
-        operators = new Operators(operationSource);
-        result = operands.getSource();
     }
 
     private boolean hasNextOperation() {
         return timesOfOperation != 0;
     }
 
-    public List<String> input() {
-        return Expression.getExpression(Input.input());
+    public void input() {
+        operationSource =  Expression.getExpression(Input.input());
+        timesOfOperation = operationSource.size() / 2;
     }
 
     public void calculate() {
+        operands = new Operands(operationSource);
+        operators = new Operators(operationSource);
+        result = operands.getSource();
+
         while (hasNextOperation()) {
             result = operators.operate(result, operands.getSource());
         }
