@@ -21,7 +21,7 @@ public class Operation implements Calculator {
     }
 
     public void input() {
-        operationSource =  Expression.getExpression(Input.input());
+        operationSource = Expression.getExpression(Input.input());
         timesOfOperation = operationSource.size() / 2;
     }
 
