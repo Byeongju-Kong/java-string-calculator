@@ -26,7 +26,7 @@ public class Operators {
             throw new ArithmeticException("0으로 나눌 수 없습니다");
         }
 
-        if(operator == '+'){
+        if(operator == '+'){ //TODO : 전략패턴 or ENUM
             return result + operand;
         }
         else if(operator == '-'){
