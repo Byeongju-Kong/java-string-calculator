@@ -1,27 +1,14 @@
 package controller;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 public class Expression {
     private static final int MIN_SIZE = 3;
 
-    public static List<String> getExpression(String[] input) {
-        List<String> expression = new ArrayList<>(Arrays.asList(input));
-
-        if (isInvalidExpression(expression)) {
-            throw new IllegalStateException("계산을 위한 식이 완전하지 않습니다.");
-        }
-        return expression;
+    public static boolean isValidExpression(String[] expression) {
+        return expression.length > MIN_SIZE || isOdd(expression.length);
     }
 
-    private static boolean isInvalidExpression(List<String> expression) {
-        return expression.size() < MIN_SIZE || isEven(expression.size());
-    }
-
-    private static boolean isEven(int size) {
-        return size % 2 == 0;
+    private static boolean isOdd(int size) {
+        return size % 2 == 1;
     }
 
 }

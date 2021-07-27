@@ -3,13 +3,11 @@ package model;
 import controller.Expression;
 import controller.Input;
 
-import java.util.List;
-
 public class Operation implements Calculator {
     private Operands operands;
     private Operators operators;
     private int timesOfOperation;
-    private List<String> operationSource;
+    private String[] operationSource;
     private double result;
 
 
@@ -21,8 +19,11 @@ public class Operation implements Calculator {
     }
 
     public void input() {
-        operationSource = Expression.getExpression(Input.input());
-        timesOfOperation = operationSource.size() / 2;
+        String[] operationSource = Input.input();
+        if(Expression.isValidExpression(operationSource)){
+            timesOfOperation = operationSource.length / 2;
+        }
+        this.operationSource = operationSource;
     }
 
     public void calculate() {
@@ -30,9 +31,9 @@ public class Operation implements Calculator {
         operators = new Operators(operationSource);
         result = operands.getSource();
 
-        while (hasNextOperation()) {
-            result = operators.operate(result, operands.getSource());
-        }
+//        while (hasNextOperation()) {
+//            result = operators.operate(result, operands.getSource());
+//        }
     }
 
     public double getResult() {
