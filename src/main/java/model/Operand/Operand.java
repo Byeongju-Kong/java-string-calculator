@@ -1,8 +1,7 @@
-package model;
+package model.Operand;
 
 public class Operand {
     private final int operand;
-
 
     public Operand(String operand) {
         String OPERAND_REGEX = "^[0-9]*$";

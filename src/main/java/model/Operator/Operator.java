@@ -1,4 +1,4 @@
-package model;
+package model.Operator;
 
 public class Operator {
     private final char operator;

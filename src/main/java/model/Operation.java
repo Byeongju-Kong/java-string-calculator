@@ -35,7 +35,7 @@ public enum Operation {
     }
 
     double divide(double x, int y) {
-        if(y == 0){
+        if (y == 0) {
             throw new ArithmeticException("0으로 나눌 수 없습니다");
         }
         return x / y;

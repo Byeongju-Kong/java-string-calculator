@@ -1,5 +1,6 @@
 package model;
 
+import model.Operand.Operands;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

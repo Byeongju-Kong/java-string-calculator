@@ -2,6 +2,8 @@ package model;
 
 import controller.Expression;
 import controller.Input;
+import model.Operand.Operands;
+import model.Operator.Operators;
 
 public class Calculator {
     private Operands operands;

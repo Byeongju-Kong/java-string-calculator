@@ -1,4 +1,4 @@
-package model;
+package model.Operator;
 
 import java.util.LinkedList;
 import java.util.Queue;

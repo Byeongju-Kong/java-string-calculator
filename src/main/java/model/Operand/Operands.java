@@ -1,4 +1,4 @@
-package model;
+package model.Operand;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -26,6 +26,4 @@ public class Operands {
         }
         return operands.remove().getOperand();
     }
-
-
 }
