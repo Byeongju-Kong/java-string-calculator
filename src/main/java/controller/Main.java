@@ -1,14 +1,14 @@
 package controller;
 
 import model.Calculator;
-import view.Result;
+import view.Display;
 
 public class Main {
     public static void main(String[] args) {
         Calculator calculator = new Calculator();
-        Result.alertInput();
+        Display.alertInput();
         calculator.input();
         calculator.calculate();
-        Result.showResult(calculator);
+        Display.showResult(calculator);
     }
 }
