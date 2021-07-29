@@ -27,6 +27,10 @@ public class Calculator {
         operators = new Operators(operationSource);
     }
 
+    private boolean hasNextOperation() {
+        return timesOfOperation != 0;
+    }
+
     public void calculate() {
         result = operands.getSource();
 
