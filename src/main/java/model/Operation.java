@@ -40,5 +40,4 @@ public enum Operation {
         }
         return x / y;
     }
-
 }
