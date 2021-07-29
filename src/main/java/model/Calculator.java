@@ -6,8 +6,8 @@ import controller.Input;
 public class Calculator {
     private Operands operands;
     private Operators operators;
+    private Operation operation;
     private int timesOfOperation;
-    private String[] operationSource;
     private double result;
 
 
@@ -23,17 +23,30 @@ public class Calculator {
         if (Expression.isValidExpression(operationSource)) {
             timesOfOperation = operationSource.length / 2;
         }
-        this.operationSource = operationSource;
+        operands = new Operands(operationSource);
+        operators = new Operators(operationSource);
     }
 
     public void calculate() {
-        operands = new Operands(operationSource);
-        operators = new Operators(operationSource);
         result = operands.getSource();
 
-//        while (hasNextOperation()) {
-//
-//        }
+        while (hasNextOperation()) {
+            parseOperator(operators.getSource());
+            result = operation.operate(result, operands.getSource());
+            timesOfOperation--;
+        }
+    }
+
+    public void parseOperator(char operator) {
+        if (operator == '+') {
+            operation = Operation.PLUS;
+        } else if (operator == '-') {
+            operation = Operation.MINUS;
+        } else if (operator == '*') {
+            operation = Operation.TIMES;
+        } else if (operator == '/') {
+            operation = Operation.DIVIDE;
+        }
     }
 
     public double getResult() {
