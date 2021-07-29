@@ -19,10 +19,8 @@ public class Calculator {
     }
 
     public void input() {
-        String[] operationSource = Input.input();
-        if (Expression.isValidExpression(operationSource)) {
-            timesOfOperation = operationSource.length / 2;
-        }
+        String[] operationSource = Expression.getValidExpression(Input.input());
+        timesOfOperation = operationSource.length / 2;
         operands = new Operands(operationSource);
         operators = new Operators(operationSource);
     }
