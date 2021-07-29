@@ -20,7 +20,7 @@ public class Operation implements Calculator {
 
     public void input() {
         String[] operationSource = Input.input();
-        if(Expression.isValidExpression(operationSource)){
+        if (Expression.isValidExpression(operationSource)) {
             timesOfOperation = operationSource.length / 2;
         }
         this.operationSource = operationSource;
@@ -32,7 +32,7 @@ public class Operation implements Calculator {
         result = operands.getSource();
 
 //        while (hasNextOperation()) {
-//            result = operators.operate(result, operands.getSource());
+//
 //        }
     }
 
