@@ -11,7 +11,7 @@ public class Input {
         String[] inputString = SCANNER.nextLine()
                 .trim()
                 .replaceAll("\\s+", DELIMITER)
-                .split("");
+                .split(" ");
         SCANNER.close();
         return inputString;
     }
