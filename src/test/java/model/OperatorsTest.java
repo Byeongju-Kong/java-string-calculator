@@ -1,6 +1,6 @@
 package model;
 
-import model.Operator.Operators;
+import model.operator.Operators;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -16,5 +16,4 @@ class OperatorsTest {
         assertThat(operators.getSource()).isEqualTo('+');
         assertThat(operators.getSource()).isEqualTo('-');
     }
-
 }

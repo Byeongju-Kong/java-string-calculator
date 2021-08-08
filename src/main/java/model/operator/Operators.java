@@ -1,4 +1,4 @@
-package model.Operator;
+package model.operator;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -13,7 +13,7 @@ public class Operators {
         operators = new LinkedList<>();
         IntStream.range(START_ENTRY, operationSource.length)
                 .filter(this::isOddNumber)
-                .forEach(index -> operators.add(new Operator(operationSource[index])));
+                .forEach(index -> operators.add(Operator.of(operationSource[index].charAt(0))));
     }
 
     private boolean isOddNumber(int number) {
