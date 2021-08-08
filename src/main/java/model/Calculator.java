@@ -12,14 +12,6 @@ public class Calculator {
     private int timesOfOperation;
     private double result;
 
-
-    public Operation() {
-    }
-
-    private boolean hasNextOperation() {
-        return timesOfOperation != 0;
-    }
-
     public void input() {
         String[] operationSource = Expression.getValidExpression(Input.input());
         timesOfOperation = operationSource.length / 2;
@@ -56,5 +48,4 @@ public class Calculator {
     public double getResult() {
         return result;
     }
-
 }
