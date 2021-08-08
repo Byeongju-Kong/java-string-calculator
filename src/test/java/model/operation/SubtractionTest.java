@@ -23,4 +23,10 @@ class SubtractionTest {
     void hasOperation_false(char invalidSource) {
         assertThat(subtraction.hasOperation(Operator.of(invalidSource))).isFalse();
     }
+
+    @Test
+    @DisplayName("두 수를 받아 더한 값을 반환한다.")
+    void operate() {
+        assertThat(subtraction.operate(3.5, 2)).isEqualTo(1.5);
+    }
 }
