@@ -15,14 +15,14 @@ class DivisionTest {
     @Test
     @DisplayName("/를 가지는 Operator 객체를 받아 true를 반환한다.")
     void hasOperation_true() {
-        assertThat(division.hasOperation(Operator.of('/'))).isTrue();
+        assertThat(division.hasOperator(Operator.of('/'))).isTrue();
     }
 
     @ParameterizedTest
     @DisplayName("/이외의 Operator 객체를 받아 false를 반환한다.")
     @ValueSource(chars = {'+', '*', '-'})
     void hasOperation_false(char invalidSource) {
-        assertThat(division.hasOperation(Operator.of(invalidSource))).isFalse();
+        assertThat(division.hasOperator(Operator.of(invalidSource))).isFalse();
     }
 
     @Test

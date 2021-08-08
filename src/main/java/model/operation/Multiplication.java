@@ -5,7 +5,7 @@ import model.operator.Operator;
 public class Multiplication implements Operation {
 
     @Override
-    public boolean hasOperation(Operator operator) {
+    public boolean hasOperator(Operator operator) {
         return operator == Operator.TIMES;
     }
 
