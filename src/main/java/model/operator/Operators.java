@@ -20,7 +20,7 @@ public class Operators {
         return number % 2 == 1;
     }
 
-    public char getSource() {
-        return operators.remove().getOperator();
+    public Operator getSource() {
+        return operators.remove();
     }
 }
