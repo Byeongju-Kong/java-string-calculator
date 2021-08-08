@@ -3,12 +3,15 @@ package model;
 import controller.Expression;
 import controller.Input;
 import model.Operand.Operands;
-import model.Operator.Operators;
+import model.operation.Operation;
+import model.operator.Operator;
+import model.operator.Operators;
+
+import static model.operation.Operations.findOperation;
 
 public class Calculator {
     private Operands operands;
     private Operators operators;
-    private Operation operation;
     private int timesOfOperation;
     private double result;
 
@@ -25,23 +28,13 @@ public class Calculator {
 
     public void calculate() {
         result = operands.getSource();
+        Operator operator;
+        Operation operation;
 
         while (hasNextOperation()) {
-            parseOperator(operators.getSource());
+            operator = operators.getSource();
+            operation = findOperation(operator);
             result = operation.operate(result, operands.getSource());
-            timesOfOperation--;
-        }
-    }
-
-    public void parseOperator(char operator) {
-        if (operator == '+') {
-            operation = Operation.PLUS;
-        } else if (operator == '-') {
-            operation = Operation.MINUS;
-        } else if (operator == '*') {
-            operation = Operation.TIMES;
-        } else if (operator == '/') {
-            operation = Operation.DIVIDE;
         }
     }
 
