@@ -1,6 +1,5 @@
 package controller;
 
-import model.Calculator;
 import view.Display;
 
 public class Main {
