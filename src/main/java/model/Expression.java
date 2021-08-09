@@ -1,4 +1,4 @@
-package controller;
+package model;
 
 public class Expression {
     private static final String DELIMITER = " ";

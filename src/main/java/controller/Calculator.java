@@ -1,5 +1,6 @@
 package controller;
 
+import model.Expression;
 import model.Operand.Operands;
 import model.operation.Operation;
 import model.operator.Operator;
