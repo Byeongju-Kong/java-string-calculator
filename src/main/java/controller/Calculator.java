@@ -1,7 +1,7 @@
 package controller;
 
 import model.ExpressionToken;
-import model.Operand.Operands;
+import model.operand.Operands;
 import model.operation.Operation;
 import model.operator.Operator;
 import model.operator.Operators;

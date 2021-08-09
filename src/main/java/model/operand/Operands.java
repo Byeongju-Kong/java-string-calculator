@@ -1,4 +1,4 @@
-package model.Operand;
+package model.operand;
 
 import java.util.LinkedList;
 import java.util.Queue;

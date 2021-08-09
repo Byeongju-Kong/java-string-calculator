@@ -1,4 +1,4 @@
-package model.Operand;
+package model.operand;
 
 public class Operand {
     private final int operand;
