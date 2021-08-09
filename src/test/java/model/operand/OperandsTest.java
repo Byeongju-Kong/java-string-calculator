@@ -18,7 +18,5 @@ class OperandsTest {
                 () -> assertEquals(operands.getSource(), 3),
                 () -> assertEquals(operands.getSource(), 5)
         );
-
     }
-
 }

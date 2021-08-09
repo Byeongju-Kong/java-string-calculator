@@ -21,5 +21,4 @@ public class ExpressionToken {
     private static boolean isEven(int size) {
         return size % 2 == 0;
     }
-
 }

@@ -4,7 +4,6 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.stream.IntStream;
 
-
 public class Operands {
     private Queue<Operand> operands;
     private static final int START_ENTRY = 0;
