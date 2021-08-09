@@ -1,6 +1,6 @@
 package controller;
 
-import model.Expression;
+import model.ExpressionToken;
 import model.Operand.Operands;
 import model.operation.Operation;
 import model.operator.Operator;
@@ -15,7 +15,7 @@ public class Calculator {
     private double result;
 
     public void input() {
-        String[] operationSource = Expression.getValidExpression(Input.input());
+        String[] operationSource = ExpressionToken.getValidExpressionTokens(Input.input());
         timesOfOperation = operationSource.length / 2;
         operands = new Operands(operationSource);
         operators = new Operators(operationSource);

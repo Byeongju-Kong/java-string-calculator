@@ -8,7 +8,7 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 import java.util.stream.Stream;
 
-import static model.Expression.getValidExpression;
+import static model.ExpressionToken.getValidExpressionTokens;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
@@ -18,7 +18,7 @@ class ExpressionTest {
     @DisplayName("짝수개 혹은 1개의 요소를 가지는 문자열 식을 받으면 예외를 발생시킨다.")
     @ValueSource(strings = {"1", "1 + 2 -"})
     void getValidExpression_ExceptionByWrongNumberOfElement(String wrongInputString) {
-        assertThatThrownBy(() -> getValidExpression(wrongInputString))
+        assertThatThrownBy(() -> getValidExpressionTokens(wrongInputString))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("계산식을 위한 요소의 개수를 확인하세요");
     }
@@ -27,7 +27,7 @@ class ExpressionTest {
     @DisplayName("3이상의 홀수개의 요소로 이루어진 문자열 식을 받아 String[]로 반환한다")
     @MethodSource("validParameterProvider")
     void getValidException_Success(String inputString, String[] expectedResult) {
-        assertThat(getValidExpression(inputString)).isEqualTo(expectedResult);
+        assertThat(getValidExpressionTokens(inputString)).isEqualTo(expectedResult);
     }
 
     static Stream<Arguments> validParameterProvider() {

@@ -1,10 +1,10 @@
 package model;
 
-public class Expression {
+public class ExpressionToken {
     private static final String DELIMITER = " ";
     private static final int MIN_SIZE = 3;
 
-    public static String[] getValidExpression(String input) {
+    public static String[] getValidExpressionTokens(String input) {
         String[] expression;
         expression = input.replaceAll("\\s+", DELIMITER)
                 .split(" ");
