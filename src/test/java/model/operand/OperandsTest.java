@@ -12,11 +12,11 @@ class OperandsTest {
     @Test
     @DisplayName("getSource로 값 반환이 잘 되는지 Test")
     void getSource() {
-        operands = new Operands(new String[]{"1", "+", "3", "-", "5"});
+        operands = new Operands(new String[]{"1", "+", "3", "-", "-5"});
         assertAll(
                 () -> assertEquals(operands.getSource(), 1),
                 () -> assertEquals(operands.getSource(), 3),
-                () -> assertEquals(operands.getSource(), 5)
+                () -> assertEquals(operands.getSource(), -5)
         );
     }
 }

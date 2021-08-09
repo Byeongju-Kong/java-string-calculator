@@ -23,7 +23,7 @@ class CalculatorTest {
         return Stream.of(
                 arguments(new String[]{"1", "+", "3"}, 4),
                 arguments(new String[]{"3", "-", "1", "*", "4"}, 8),
-                arguments(new String[]{"2", "/", "1", "+", "2", "*", "4"}, 16)
+                arguments(new String[]{"2", "/", "1", "+", "-2", "*", "4"}, 0)
         );
     }
 }
