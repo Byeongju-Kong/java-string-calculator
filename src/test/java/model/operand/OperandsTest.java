@@ -4,7 +4,8 @@ import model.Operand.Operands;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertAll;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class OperandsTest {
     private Operands operands;
@@ -13,9 +14,12 @@ class OperandsTest {
     @DisplayName("getSource로 값 반환이 잘 되는지 Test")
     void getSource() {
         operands = new Operands(new String[]{"1", "+", "3", "-", "5"});
-        assertThat(operands.getSource()).isEqualTo(1);
-        assertThat(operands.getSource()).isEqualTo(3);
-        assertThat(operands.getSource()).isEqualTo(5);
+        assertAll(
+                () -> assertEquals(operands.getSource(), 1),
+                () -> assertEquals(operands.getSource(), 3),
+                () -> assertEquals(operands.getSource(), 5)
+        );
+
     }
 
 }
