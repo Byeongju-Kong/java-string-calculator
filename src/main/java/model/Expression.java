@@ -10,7 +10,7 @@ public class Expression {
                 .split(" ");
 
         if (expression.length < MIN_SIZE || isEven(expression.length)) {
-            throw new IllegalStateException("계산식을 위한 요소의 개수를 확인하세요");
+            throw new IllegalArgumentException("계산식을 위한 요소의 개수를 확인하세요");
         }
         return expression;
     }
