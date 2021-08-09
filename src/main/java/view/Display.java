@@ -1,6 +1,6 @@
 package view;
 
-import controller.Calculator;
+import model.Calculator;
 
 public class Display {
     private Display() {

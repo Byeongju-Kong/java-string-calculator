@@ -1,6 +1,5 @@
-package controller;
+package model;
 
-import model.ExpressionToken;
 import model.operand.Operands;
 import model.operation.Operation;
 import model.operator.Operator;
@@ -9,23 +8,23 @@ import model.operator.Operators;
 import static model.operation.Operations.findOperation;
 
 public class Calculator {
-    private Operands operands;
-    private Operators operators;
+    private final Operands operands;
+    private final Operators operators;
     private int timesOfOperation;
     private double result;
 
-    public void input() {
-        String[] operationSource = ExpressionToken.getValidExpressionTokens(Input.input());
+    public Calculator(String[] operationSource) {
         timesOfOperation = operationSource.length / 2;
         operands = new Operands(operationSource);
         operators = new Operators(operationSource);
     }
 
+
     private boolean hasNextOperation() {
         return timesOfOperation != 0;
     }
 
-    public void calculate() {
+    private void calculate() {
         result = operands.getSource();
         Operator operator;
         Operation operation;
@@ -39,6 +38,7 @@ public class Calculator {
     }
 
     public double getResult() {
+        calculate();
         return result;
     }
 }
