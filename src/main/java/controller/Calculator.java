@@ -33,6 +33,7 @@ public class Calculator {
             operator = operators.getSource();
             operation = findOperation(operator);
             result = operation.operate(result, operands.getSource());
+            timesOfOperation--;
         }
     }
 
