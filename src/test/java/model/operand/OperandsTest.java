@@ -1,4 +1,4 @@
-package model;
+package model.operand;
 
 import model.Operand.Operands;
 import org.junit.jupiter.api.DisplayName;

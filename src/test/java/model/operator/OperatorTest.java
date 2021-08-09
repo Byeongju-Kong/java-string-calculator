@@ -1,6 +1,5 @@
-package model;
+package model.operator;
 
-import model.operator.Operator;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
