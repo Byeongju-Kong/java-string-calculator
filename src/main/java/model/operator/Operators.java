@@ -6,7 +6,7 @@ import java.util.stream.IntStream;
 
 
 public class Operators {
-    private Queue<String> symbols;
+    private final Queue<String> symbols;
     private static final int START_ENTRY = 0;
 
     public Operators(String[] operationSource) {

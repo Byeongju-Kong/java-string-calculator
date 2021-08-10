@@ -5,7 +5,7 @@ import java.util.Queue;
 import java.util.stream.IntStream;
 
 public class Operands {
-    private Queue<Operand> numbers;
+    private final Queue<Operand> numbers;
     private static final int START_ENTRY = 0;
 
     public Operands(String[] operationSource) {
