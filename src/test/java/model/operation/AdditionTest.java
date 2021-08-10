@@ -4,7 +4,7 @@ import model.operator.Operator;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.ValueSource;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -19,9 +19,10 @@ class AdditionTest {
 
     @ParameterizedTest
     @DisplayName("+이외의 Operator 객체를 받아 false를 반환한다.")
-    @ValueSource(chars = {'-', '*', '/'})
-    void hasOperation_false(char invalidSource) {
-        assertThat(addition.hasOperator(Operator.of(invalidSource))).isFalse();
+    @CsvSource(value = {"+,true", "-,false", "*,false", "/,false"})
+    void hasOperation_false(char symbol, boolean expect) {
+        boolean actual = addition.hasOperator(Operator.of(symbol));
+        assertThat(actual).isEqualTo(expect);
     }
 
     @Test

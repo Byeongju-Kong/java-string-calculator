@@ -11,7 +11,7 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 class OperandTest {
     @ParameterizedTest
     @DisplayName("Operand 객체가 잘 생성되는지 Test")
-    @MethodSource("provideOperand")
+    @CsvSource(value = {"1, 1", "-2, -2", "100, 100"})
     void create(String givenOperand, int returnedOperand) {
         Operand operand = new Operand(givenOperand);
         assertThat(operand.getOperand()).isEqualTo(returnedOperand);
