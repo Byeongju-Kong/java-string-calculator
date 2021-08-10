@@ -3,7 +3,7 @@ package model.operation;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.ValueSource;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
@@ -11,17 +11,12 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 class DivisionTest {
     private Operation division = new Division();
 
-    @Test
-    @DisplayName("/를 가지는 Operator 객체를 받아 true를 반환한다.")
-    void hasOperation_true() {
-        assertThat(division.hasOperator("/")).isTrue();
-    }
-
     @ParameterizedTest
     @DisplayName("/이외의 Operator 객체를 받아 false를 반환한다.")
-    @ValueSource(strings = {"+", "*", "-"})
-    void hasOperation_false(String invalidSource) {
-        assertThat(division.hasOperator(invalidSource)).isFalse();
+    @CsvSource(value = {"+,false", "-,false", "*,false", "/,true"})
+    void hasOperation(String symbol, boolean expect) {
+        boolean actual = division.hasOperator(symbol);
+        assertThat(actual).isEqualTo(expect);
     }
 
     @Test

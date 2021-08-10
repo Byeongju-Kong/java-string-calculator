@@ -19,7 +19,7 @@ class AdditionTest {
     @ParameterizedTest
     @DisplayName("+이외의 Operator 객체를 받아 false를 반환한다.")
     @CsvSource(value = {"+,true", "-,false", "*,false", "/,false"})
-    void hasOperation_false(String symbol, boolean expect) {
+    void hasOperation(String symbol, boolean expect) {
         boolean actual = addition.hasOperator(symbol);
         assertThat(actual).isEqualTo(expect);
     }
