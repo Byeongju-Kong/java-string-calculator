@@ -1,6 +1,5 @@
 package model.operation;
 
-import model.operator.Operator;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -15,14 +14,14 @@ class DivisionTest {
     @Test
     @DisplayName("/를 가지는 Operator 객체를 받아 true를 반환한다.")
     void hasOperation_true() {
-        assertThat(division.hasOperator(Operator.of('/'))).isTrue();
+        assertThat(division.hasOperator("/")).isTrue();
     }
 
     @ParameterizedTest
     @DisplayName("/이외의 Operator 객체를 받아 false를 반환한다.")
-    @ValueSource(chars = {'+', '*', '-'})
-    void hasOperation_false(char invalidSource) {
-        assertThat(division.hasOperator(Operator.of(invalidSource))).isFalse();
+    @ValueSource(strings = {"+", "*", "-"})
+    void hasOperation_false(String invalidSource) {
+        assertThat(division.hasOperator(invalidSource)).isFalse();
     }
 
     @Test

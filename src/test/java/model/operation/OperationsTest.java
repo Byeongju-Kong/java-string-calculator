@@ -1,6 +1,5 @@
 package model.operation;
 
-import model.operator.Operator;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -15,16 +14,16 @@ class OperationsTest {
     @ParameterizedTest
     @MethodSource("operationProvider")
     @DisplayName("연산자를 받아 실제 구현 객체를 반환한다")
-    void findOperation(Operator operator, Class<Operation> expect) {
+    void findOperation(String operator, Class<Operation> expect) {
         assertThat(Operations.findOperation(operator).getClass()).isEqualTo(expect);
     }
 
     static Stream<Arguments> operationProvider() {
         return Stream.of(
-                arguments(Operator.PLUS, Addition.class),
-                arguments(Operator.MINUS, Subtraction.class),
-                arguments(Operator.TIMES, Multiplication.class),
-                arguments(Operator.DIVIDED_BY, Division.class)
+                arguments("+", Addition.class),
+                arguments("-", Subtraction.class),
+                arguments("*", Multiplication.class),
+                arguments("/", Division.class)
         );
     }
 }

@@ -1,11 +1,9 @@
 package model.operation;
 
-import model.operator.Operator;
-
 public class Subtraction implements Operation {
     @Override
-    public boolean hasOperator(Operator operator) {
-        return operator == Operator.MINUS;
+    public boolean hasOperator(String operator) {
+        return operator.equals("-");
     }
 
     @Override

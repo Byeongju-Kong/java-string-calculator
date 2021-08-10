@@ -2,7 +2,6 @@ package model;
 
 import model.operand.Operands;
 import model.operation.Operation;
-import model.operator.Operator;
 import model.operator.Operators;
 
 import static model.operation.Operations.findOperation;
@@ -26,7 +25,7 @@ public class Calculator {
 
     private void calculate() {
         result = operands.getSource();
-        Operator operator;
+        String operator;
         Operation operation;
 
         while (hasNextOperation()) {

@@ -1,7 +1,5 @@
 package model.operation;
 
-import model.operator.Operator;
-
 import java.util.Arrays;
 import java.util.List;
 
@@ -12,7 +10,7 @@ public class Operations {
     private static final List<Operation> OPERATION_STRATEGIES
             = Arrays.asList(new Addition(), new Subtraction(), new Multiplication(), new Division());
 
-    public static Operation findOperation(final Operator operator) {
+    public static Operation findOperation(String operator) {
         return OPERATION_STRATEGIES.stream()
                 .filter(operation -> operation.hasOperator(operator))
                 .findAny()

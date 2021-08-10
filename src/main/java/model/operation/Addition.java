@@ -1,11 +1,9 @@
 package model.operation;
 
-import model.operator.Operator;
-
 public class Addition implements Operation {
     @Override
-    public boolean hasOperator(Operator operator) {
-        return operator == Operator.PLUS;
+    public boolean hasOperator(String operator) {
+        return operator.equals("+");
     }
 
     @Override

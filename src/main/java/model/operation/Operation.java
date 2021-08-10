@@ -1,8 +1,6 @@
 package model.operation;
 
-import model.operator.Operator;
-
 public interface Operation {
-    boolean hasOperator(Operator operator);
+    boolean hasOperator(String operator);
     double operate(double result, int nextOperand);
 }

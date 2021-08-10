@@ -1,6 +1,5 @@
 package model.operation;
 
-import model.operator.Operator;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -14,14 +13,14 @@ class SubtractionTest {
     @Test
     @DisplayName("-를 가지는 Operator 객체를 받아 true를 반환한다.")
     void hasOperation_true() {
-        assertThat(subtraction.hasOperator(Operator.of('-'))).isTrue();
+        assertThat(subtraction.hasOperator("-")).isTrue();
     }
 
     @ParameterizedTest
     @DisplayName("-이외의 Operator 객체를 받아 false를 반환한다.")
-    @ValueSource(chars = {'+', '*', '/'})
-    void hasOperation_false(char invalidSource) {
-        assertThat(subtraction.hasOperator(Operator.of(invalidSource))).isFalse();
+    @ValueSource(strings = {"+", "*", "/"})
+    void hasOperation_false(String invalidSource) {
+        assertThat(subtraction.hasOperator(invalidSource)).isFalse();
     }
 
     @Test
