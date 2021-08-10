@@ -9,10 +9,15 @@ public class Operands {
     private static final int START_ENTRY = 0;
 
     public Operands(String[] operationSource) {
-        operands = new LinkedList<>();
+        operands = parseOperand(operationSource);
+    }
+
+    private Queue<Operand> parseOperand(String[] operationSource) {
+        Queue<Operand> operands = new LinkedList<>();
         IntStream.range(START_ENTRY, operationSource.length)
                 .filter(this::isEvenNumber)
                 .forEach(index -> operands.add(new Operand(operationSource[index])));
+        return operands;
     }
 
     private boolean isEvenNumber(int number) {
