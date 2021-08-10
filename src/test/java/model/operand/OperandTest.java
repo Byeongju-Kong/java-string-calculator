@@ -30,7 +30,7 @@ class OperandTest {
     }
 
     @ParameterizedTest
-    @DisplayName("실-수로 Operand 객체를 생성했을 시에 예외 발생 Test")
+    @DisplayName("실-수로 Operand 객체를 생성했을 시에 예외 발생 Test") //TODO : 실수 -> 정수가 아닌 실수
     @ValueSource(strings = {"2.5", "+"})
     void create_ExceptionByActualNumber(String wrongOperand) {
         assertThatThrownBy(() -> new Operand(wrongOperand))
