@@ -6,14 +6,14 @@ import java.util.stream.IntStream;
 
 
 public class Operators {
-    private Queue<String> operators;
+    private Queue<String> symbols;
     private static final int START_ENTRY = 0;
 
     public Operators(String[] operationSource) {
-        operators = new LinkedList<>();
+        symbols = new LinkedList<>();
         IntStream.range(START_ENTRY, operationSource.length)
                 .filter(this::isOddNumber)
-                .forEach(index -> operators.add(operationSource[index]));
+                .forEach(index -> symbols.add(operationSource[index]));
     }
 
     private boolean isOddNumber(int number) {
@@ -21,6 +21,6 @@ public class Operators {
     }
 
     public String getSource() {
-        return operators.remove();
+        return symbols.remove();
     }
 }
