@@ -6,8 +6,8 @@ import java.util.stream.IntStream;
 
 
 public class Operators {
-    private final Queue<String> symbols;
     private static final int START_ENTRY = 0;
+    private final Queue<String> symbols;
 
     public Operators(String[] operationSource) {
         symbols = new LinkedList<>();

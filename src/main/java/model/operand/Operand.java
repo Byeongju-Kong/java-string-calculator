@@ -1,8 +1,8 @@
 package model.operand;
 
 public class Operand {
-    private final int value;
     private static final String OPERAND_REGEX = "^(0|[-]?[1-9]\\d*)$";
+    private final int value;
 
     public Operand(String operand) {
         if (!operand.matches(OPERAND_REGEX)) {

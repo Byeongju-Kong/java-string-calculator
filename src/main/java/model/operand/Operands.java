@@ -5,8 +5,8 @@ import java.util.Queue;
 import java.util.stream.IntStream;
 
 public class Operands {
-    private final Queue<Operand> numbers;
     private static final int START_ENTRY = 0;
+    private final Queue<Operand> numbers;
 
     public Operands(String[] operationSource) {
         numbers = parseOperand(operationSource);
