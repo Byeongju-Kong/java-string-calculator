@@ -18,7 +18,6 @@ public class Calculator {
         operators = new Operators(operationSource);
     }
 
-
     private boolean hasNextOperation() {
         return timesOfOperation != 0;
     }
