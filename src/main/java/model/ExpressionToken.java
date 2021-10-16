@@ -7,7 +7,7 @@ public class ExpressionToken {
     private ExpressionToken() {
     }
 
-    public static String[] getValidExpressionTokens(String input) {
+    public static String[] getValidExpressionTokens(final String input) {
         String[] expression = input.replaceAll("\\s+", DELIMITER)
                 .split(" ");
         if (expression.length < MIN_SIZE || isEven(expression.length)) {
@@ -16,7 +16,7 @@ public class ExpressionToken {
         return expression;
     }
 
-    private static boolean isEven(int size) {
+    private static boolean isEven(final int size) {
         return size % 2 == 0;
     }
 }

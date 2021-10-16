@@ -12,7 +12,7 @@ public class Calculator {
     private int timesOfOperation;
     private double result;
 
-    public Calculator(String[] operationSource) {
+    public Calculator(final String[] operationSource) {
         timesOfOperation = operationSource.length / 2;
         operands = new Operands(operationSource);
         operators = new Operators(operationSource);

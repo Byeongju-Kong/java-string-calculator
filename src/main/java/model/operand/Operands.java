@@ -8,11 +8,11 @@ public class Operands {
     private static final int START_ENTRY = 0;
     private final Queue<Operand> numbers;
 
-    public Operands(String[] operationSource) {
+    public Operands(final String[] operationSource) {
         numbers = parseOperand(operationSource);
     }
 
-    private Queue<Operand> parseOperand(String[] operationSource) {
+    private Queue<Operand> parseOperand(final String[] operationSource) {
         Queue<Operand> operands = new LinkedList<>();
         IntStream.range(START_ENTRY, operationSource.length)
                 .filter(this::isEvenNumber)
@@ -20,7 +20,7 @@ public class Operands {
         return operands;
     }
 
-    private boolean isEvenNumber(int number) {
+    private boolean isEvenNumber(final int number) {
         return number % 2 == 0;
     }
 
