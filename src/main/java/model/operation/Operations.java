@@ -7,8 +7,8 @@ public class Operations {
     private Operations() {
     }
 
-    private static final List<Operation> OPERATION_STRATEGIES
-            = Arrays.asList(new Addition(), new Subtraction(), new Multiplication(), new Division());
+    private static final List<Operation> OPERATION_STRATEGIES =
+            Arrays.asList(new Addition(), new Subtraction(), new Multiplication(), new Division());
 
     public static Operation findOperation(String operator) {
         return OPERATION_STRATEGIES.stream()
