@@ -9,17 +9,18 @@ import static model.operation.Operations.findOperation;
 public class Calculator {
     private final Operands operands;
     private final Operators operators;
-    private int timesOfOperation;
+    private final OperationTimes operationTimes;
     private double result;
 
     public Calculator(final String[] operationSource) {
-        timesOfOperation = operationSource.length / 2;
+        int timesOfOperation = operationSource.length / 2;
+        operationTimes = new OperationTimes(timesOfOperation);
         operands = new Operands(operationSource);
         operators = new Operators(operationSource);
     }
 
     private boolean hasNextOperation() {
-        return timesOfOperation != 0;
+        return operationTimes.hasLeftTimes();
     }
 
     private void calculate() {
@@ -31,7 +32,7 @@ public class Calculator {
             operator = operators.getSource();
             operation = findOperation(operator);
             result = operation.operate(result, operands.getSource());
-            timesOfOperation--;
+            operationTimes.decrease();
         }
     }
 
